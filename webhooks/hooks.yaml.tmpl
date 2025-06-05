@@ -1,0 +1,20 @@
+- id: deploy-minio
+  execute-command: /etc/webhooks/minio/deploy.sh
+  command-working-directory: /etc/webhooks/minio
+  response-message: Deploying MinIO
+  response-headers:
+    - name: Access-Control-Allow-Origin
+      value: "*"
+  pass-arguments-to-command:
+    - source: payload
+      name: DOCKER_PASSWORD
+    - source: payload
+      name: DOCKER_TAG
+  trigger-rule:
+    and:
+      - match:
+          type: value
+          value: "{{ getenv "TEST_SECRET" }}"
+          parameter:
+            source: header
+            name: X-Token
