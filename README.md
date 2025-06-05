@@ -13,3 +13,9 @@ A repository of [webhooks](https://github.com/adnanh/webhook) to manage containe
 ## Tailscale
 
 In order for this setup to work, you must first setup a Tailscale account and connect your Synology device to Tailscale with [this guide](https://tailscale.com/kb/1131/synology). Once you've done so, you should see your Synology device in your Tailscale account and be able to ping the Synology with the Tailscale IP remotely (given you've set everything up correctly).
+
+## Getting Started
+
+### GitHub Runner
+
+Before you do anything, you need to make sure that a GitHub runner is running locally on the Synology device (so that you don't incur any charges for GitHub Actions).
